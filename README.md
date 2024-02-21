@@ -6,7 +6,7 @@ This Laravel application is designed for retrieve records by month and year usin
 ## Clone the Repository
 ``git clone https://github.com/pringal/patient_meal_planning.git``
 
-##Set Up Environment Variables
+## Set Up Environment Variables
 
 Create a copy of the .env.example file and save it as .env. Update the following section in the .env file with your database information:
 
