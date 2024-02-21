@@ -25,12 +25,12 @@ Create a copy of the .env.example file and save it as .env. Update the following
 
 
 
-##Install Dependencies
+## Install Dependencies
 Run the following command to install the project dependencies:
 
 ``composer install``
 
-##Run Migrations and Seed Database
+## Run Migrations and Seed Database
 Run the migrations to set up the database schema:
 
 ``php artisan migrate``
@@ -39,7 +39,7 @@ Seed the database with initial data:
 
 ``php artisan db:seed --class=PatientMealPlanningSeeder``
 
-##Set Up Scheduler
+## Set Up Scheduler
 Add the following line to your server's crontab to run Laravel's scheduler at regular intervals:
 
 ``* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1``
