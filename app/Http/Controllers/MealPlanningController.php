@@ -54,7 +54,8 @@ class MealPlanningController extends Controller
             $total_carbs_average = collect($processedGroupedResults['total_carbs'])->average();
             $total_proteins_average = collect($processedGroupedResults['total_proteins'])->average();
 
-            $processedGroupedResults['planned_percentage'] = ($processedGroupedResults['count'] / $processedGroupedResults['days_in_month']) * 100;
+            $processedGroupedResults['planned_percentage'] =
+                ($processedGroupedResults['count'] / $processedGroupedResults['days_in_month']) * 100;
             $processedGroupedResults['avg_total_calories'] = $total_calories_average;
             $processedGroupedResults['avg_total_carbs'] = $total_carbs_average;
             $processedGroupedResults['avg_total_protein'] = $total_proteins_average;
@@ -78,11 +79,16 @@ class MealPlanningController extends Controller
             });
 
             $final_results[$key]['month'] = $groupedResultsRows['month'];
-            $final_results[$key]['planned_percentage'] = number_format($groupedResultsRows['planned_percentage'],0).'%';
-            $final_results[$key]['avg_total_calories'] = floatval(number_format($groupedResultsRows['avg_total_calories'],2));
-            $final_results[$key]['avg_total_carbs'] = floatval(number_format($groupedResultsRows['avg_total_carbs'],2));
-            $final_results[$key]['avg_total_protein'] = floatval(number_format($groupedResultsRows['avg_total_protein'],2));
-            $final_results[$key]['avg_total_fat'] = floatval(number_format($groupedResultsRows['avg_total_fat'],2));
+            $final_results[$key]['planned_percentage'] =
+                number_format($groupedResultsRows['planned_percentage'],0).'%';
+            $final_results[$key]['avg_total_calories'] =
+                floatval(number_format($groupedResultsRows['avg_total_calories'],2));
+            $final_results[$key]['avg_total_carbs'] =
+                floatval(number_format($groupedResultsRows['avg_total_carbs'],2));
+            $final_results[$key]['avg_total_protein'] =
+                floatval(number_format($groupedResultsRows['avg_total_protein'],2));
+            $final_results[$key]['avg_total_fat'] =
+                floatval(number_format($groupedResultsRows['avg_total_fat'],2));
             $final_results[$key]['days_planning_skipped'] = $allDatesFormatted->toArray();
         }
         $return_results = [];
