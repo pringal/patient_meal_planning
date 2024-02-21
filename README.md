@@ -44,6 +44,9 @@ Add the following line to your server's crontab to run Laravel's scheduler at re
 
 ``* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1``
 
+## Direct Command for the api execution in terminal
+``php artisan app:call-meal-planning-api``
+
 ## Direct run the api (GET)
 ``http://127.0.0.1:8000/api/meal-planning?start_date=2022-01-01&end_date=2023-02-31``
 
